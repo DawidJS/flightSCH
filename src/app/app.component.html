@@ -1,0 +1,24 @@
+<data-grid (register)="registerFlight($event)" [rows]="data"></data-grid>
+
+<div class="modal" *ngIf="currentFlight">
+  <div class="modal-window">
+    <header class="header">
+      <div>
+        <h2>{{currentFlight.flightNumber}} Registration</h2>
+        <p>{{currentFlight.scheduledDate | date: 'dd/MM/YYYY hh:mm' }}</p>
+      </div>
+      <img (click)="closeModal()" src="../assets/baseline_close_black_24dp.png" alt="X">
+    </header>
+
+    <section class="content">
+      <h3 for="reg">Registration</h3>
+      <input name="reg" type="text">
+    </section>
+
+    <footer>
+      <button class="cancel" (click)="closeModal()">CANCEL</button>
+      <button class="save">SAVE</button>
+    </footer>
+
+  </div>
+</div>
